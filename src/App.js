@@ -1,9 +1,11 @@
 import React, { Component }from 'react';
-// import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
 import Profile from './components/Profile';
-import Login from './components/Login';
+import Blog from './components/Blog';
+import Example from './components/Modal/Modal';
+import { Route, Link, Switch } from 'react-router-dom'
+
 
 
 class App extends Component {
@@ -11,8 +13,9 @@ class App extends Component {
   return (
     <div className="App">
       <Header />
-      <Login />
       <Profile />
+      <Blog />
+      <Example />
     </div>
   );
 }}
