@@ -9,13 +9,15 @@ import { Route, Link, Switch } from 'react-router-dom'
 
 
 class App extends Component {
+ 
+
   render() {
   return (
     <div className="App">
       <Header />
       <Profile />
       <Blog />
-      <Example />
+      {/* <Example show={this.state.showModal}/> */}
     </div>
   );
 }}

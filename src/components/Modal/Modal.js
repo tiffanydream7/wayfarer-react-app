@@ -1,6 +1,8 @@
 import React from 'react';
 import './Modal.css';
 import { Container, Row, Col, Button, Modal, Form } from 'react-bootstrap';
+import LogIn from '../LogIn/LogIn';
+import SignUp from '../SignUp/SignUp';
 
 class Example extends React.Component {
 constructor(props, context) {
@@ -15,64 +17,41 @@ show: false,
 }
 
 handleClose() {
-this.setState({ show: false });
-}
+    this.setState({ show: false });
+  }
+    
+  handleShow = () => {
+    this.setState({ show: true });
+  }
 
-handleShow() {
-this.setState({ show: true });
-}
-
-render() {
-return (
-<>
-    <Button variant="primary" onClick={this.handleShow}>
-        Login
-    </Button>
-
-    <Modal show={this.state.show} onHide={this.handleClose}>
-        <Modal.Header closeButton>
-            <Modal.Title>Log in</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-            <Form>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>username:</Form.Label>
-                    <Form.Control type="name" placeholder="" />
-                </Form.Group>
-                <Form.Group controlId="formBasicPassword">
-                    <Form.Label>password</Form.Label>
-                    <Form.Control type="password" placeholder="" />
-                </Form.Group>
-                <Form.Group controlId="formBasicChecbox">
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
+    render() {
+        console.log('form:', this.props.form)
+        let title;
+        let form = (this.props.form === "Log in") ? <LogIn /> : <SignUp />;
+        // if (this.props.form = "login") {
+        //         return `<LogIn />`
+        // } else {
+        //     return `<SignUp />`
+        // }
+        return (
+            <>
+                <Button variant="primary" onClick={this.handleShow}>
+                {this.props.form}
                 </Button>
-                <Modal.Title>Sign up</Modal.Title>
-            </Form>
-            <Form>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>username:</Form.Label>
-                    <Form.Control type="name" placeholder="" />
-                    <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
-                    </Form.Text>
-                </Form.Group>
-                <Form.Group controlId="formBasicPassword">
-                    <Form.Label>password</Form.Label>
-                    <Form.Control type="password" placeholder="" />
-                </Form.Group>
-                <Form.Group controlId="formBasicChecbox">
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
-            </Form>
-        </Modal.Body>
-    </Modal>
-</>
-);
-}
+
+                    <Modal show={this.state.show}
+                    onHide={this.handleClose}
+                    >
+                    <Modal.Header closeButton>
+                        <Modal.Title>{this.props.form}</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        {form}
+                    </Modal.Body>
+                </Modal>
+            </>
+        );
+    }
 }
 
 

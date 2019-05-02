@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import Modal from 'react-bootstrap/Modal'
+import Example from './Modal/Modal';
 
 
 class Header extends Component {
@@ -16,8 +16,8 @@ class Header extends Component {
               <Col>Wayfarer</Col><Link to={'/'}></Link>
             </Row>
             <Row className='signin-bar'>
-              <Col></Col><Link to={'./login'}>Login</Link>
-              <Col></Col><Link to={'/signup'}>Sign up</Link>
+              <Col></Col><Example form='Log in' />
+              <Col></Col><Example form='Sign up' />
               {/* <Col>Profile</Col> */}
             </Row>
                 </Container>
