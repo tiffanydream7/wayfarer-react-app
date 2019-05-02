@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import PostContainer from './PostContainer';
+import { Container, Col, Row, Image } from 'react-bootstrap';
+import defaultImage from '../images/rorschach.jpg';
 const API_URL = 'http://localhost:4000/api/v1/users';
 const userId = '5ccb1edd7c06e0efeb18e4bf'
 
@@ -42,9 +44,10 @@ class Profile extends Component {
 
         let profile = 'proifiel';
         let posts = [];
+        let user;
         if(this.state.response){
             console.log('get it')
-            let user = this.state.response.data;
+            user = this.state.response.data;
             console.log('user:', user)
             console.log('name:', (user ? user.name : 'nothing'))
             profile = 
@@ -65,8 +68,14 @@ class Profile extends Component {
         }
         return(
             <div>
-                {profile}
-                <PostContainer info={posts}/>
+                <Container>
+                    <Row>
+                        <Col>{profile}</Col>
+                        <Col><Image src={defaultImage} roundedCircle/></Col>
+                    </Row>
+                
+                <PostContainer info={posts} user={user ? user.name.split(' ')[0] : 'User'}/>
+                </Container>
             </div>
         )
     }

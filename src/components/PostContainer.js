@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import Post from "./Post";
+import { Container, Row, Col, Button, Collapse, ListGroup } from 'react-bootstrap';
+
 
 
     class PostContainer extends Component {
+        colors = [ 'success', 'danger', 'warning', 'info', 'light', 'dark']
+
         render(){
             let posts;
             // let keyNum = 0;
@@ -11,19 +15,20 @@ import Post from "./Post";
                     // keyNum++
                     return (
                         <section key={key}>
-                            <div className="post-malone">
+                            <ListGroup >
                                 <Post
                                     post={post}
+                                    color={this.colors[key]}
                                     // key={keyNum}
                                 />
-                            </div>
+                            </ListGroup>
                         </section>
                     )
                 })
             }
             return(
                 <div>
-                    <h3>Posts by User</h3>
+                    <h3>Posts by {this.props.user}</h3>
                     {posts}
                 </div>
             )
