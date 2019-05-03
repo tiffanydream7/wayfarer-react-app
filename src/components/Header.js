@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import Example from './Modal/Modal';
+import logo from '../images/logo.png';
+import travel01 from '../images/travel01.jpeg';
 
 
 class Header extends Component {
@@ -12,22 +14,18 @@ class Header extends Component {
             <nav>
                <Container className='header-box'>
             <Row className='logo'>
-              <Col>Logo</Col><Link to={'/'}></Link>
-              <Col>Wayfarer</Col><Link to={'/'}></Link>
+                <Col><img src={logo} alt="Logo" width='100px' height='70px' /></Col>
+                <Link to={'/'}></Link>
+                <Col>Wayfarer</Col><Link to={'/'}></Link>
             </Row>
             <Row className='signin-bar'>
-              <Col></Col><Example form='Log in' />
-              <Col></Col><Example form='Sign up' />
-              {/* <Col>Profile</Col> */}
-            </Row>
-                </Container>
-            
-             <Container className='hero-image'>
-            <Row>
-              <Col>hero-image</Col>
-            </Row>
-                </Container>
-                </nav>
+                <Col></Col><Example form='Log in' />
+                <Col></Col><Example form='Sign up' />
+                </Row>
+              </Container>
+            </nav>
+
+         
             </header>
         )
     }
