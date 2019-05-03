@@ -18,19 +18,13 @@ class Header extends Component {
                 <Link to={'/'}></Link>
                 <Col>Wayfarer</Col><Link to={'/'}></Link>
             </Row>
-                
             <Row className='signin-bar'>
                 <Col></Col><Example form='Log in' />
                 <Col></Col><Example form='Sign up' />
                 </Row>
               </Container>
             </nav>
-            
-            <Container className='hero-image'>
-              <Row>
-                <Col><img src={travel01} alt="travel01" /></Col>
-              </Row>
-                </Container>
+
          
             </header>
         )
