@@ -4,7 +4,7 @@ import PostContainer from './PostContainer';
 import { Container, Col, Row, Image } from 'react-bootstrap';
 import defaultImage from '../images/rorschach.jpg';
 const API_URL = 'http://localhost:4000/api/v1/users';
-const userId = '5ccb1edd7c06e0efeb18e4bf'
+const userId = '5ccbca39b2d97f4887531faa'
 
 
 class Profile extends Component {
@@ -13,7 +13,7 @@ class Profile extends Component {
     }
 
 
-    search = () => {
+    getUser = () => {
         axios.get(`${API_URL}/${userId}`)
         .then((res) => {
             console.log(res)
@@ -23,21 +23,19 @@ class Profile extends Component {
         })
     }
 
-    // shouldComponentUpdate = (nextProps, nextState) => {
-    //     if(this.state.response.length === 0 &&
-    //         this.state.query === nextState.query){
-    //         return false;
-    //     }
-    //     return true;
-    // }
-
-    // componentDidUpdate = (prevProps, prevState) => {
-    //     if(prevState.query !== this.state.query){
-    //         this.search();
-    //     }
-    // }
     componentDidMount = () => {
-        this.search()
+        this.getUser()
+    }
+
+    editProfile = event => {
+        event.preventDefault();
+        if(this.state.response){
+            console.log(` 
+            EDIT PROFILE:
+            name: "${this.state.response.data.name}"
+            currentCity: "${this.state.response.data.currentCity}"
+            `)
+        } 
     }
 
     render(){
@@ -50,21 +48,15 @@ class Profile extends Component {
             user = this.state.response.data;
             // console.log('user:', user)
             // console.log('name:', (user ? user.name : 'nothing'))
-            profile = 
+            profile = (
             <div className="intro">
                 <h1>{user ? user.name : 'no one yet'}</h1>
                 <h2>{user ? user.currentCity : 'nowhere at all'}</h2>
-            </div>
+                <h4>{user ? 'joined ' + user.joinDate.slice(0, 10) : 'nowhere at all'}</h4>
+            </div>)
             
             posts = user ? user.posts : [{user: false}];
-                    // <section className="profile">
-                    //     <div backgroundcolor="red">
-                    //         <h4>{user ? user.posts[0].title : "no travel info"}</h4>
-                    //         <p>{user ? user.posts[0].content : 'no travel info '}</p>
-                    //     </div>
-                    // </section>
-                
-            
+
         }
         return(
             <div>
@@ -72,6 +64,14 @@ class Profile extends Component {
                     <Row>
                         <Col>{profile}</Col>
                         <Col><Image src={defaultImage} roundedCircle/></Col>
+                    </Row>
+                    <Row>
+                        <Col></Col>
+                        <Col></Col>
+                        <Col></Col>
+                        <Col>
+                            <button className="btn btn-alert" onClick={this.editProfile}>Edit Profile</button>
+                        </Col>
                     </Row>
                 
                 <PostContainer info={posts} user={user ? user.name.split(' ')[0] : 'User'}/>
