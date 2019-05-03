@@ -35,8 +35,8 @@ handleClose() {
         // }
         return (
             <>
-                <Button variant="primary" onClick={this.handleShow}>
-                {this.props.form}
+                <Button className='my-btn' onClick={this.handleShow}>
+                    {this.props.form}
                 </Button>
 
                     <Modal show={this.state.show}

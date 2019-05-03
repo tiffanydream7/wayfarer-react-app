@@ -1,35 +1,11 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ------------------------------------------------
+  G L O B A L  S T Y L E S
+---------------------------------------------------*/
+/* basic reset */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .header-box {
@@ -39,14 +15,16 @@
   max-width: 100%;
   padding: 0;
   margin: 0 auto;
-  border: 2px solid blue;
+  border: none;
 }
 
 .logo {
     display: flex;
     justify-content: space-evenly;
-    margin: 10px;
+    margin: 0px;
     width: 300px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .signin-bar {
@@ -58,12 +36,34 @@
 }
 
 .hero-image {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    /* display: flex; */
+    /* background-repeat: no-repeat; */
     padding: 0;
-    margin: 0 auto;
-    border: 2px solid black;
-    height: 250px;
+    margin: 0;
     max-width: 100%;
+    background-repeat: no-repeat;
+  background-size: cover;
+}
+
+nav {
+  background: rgb(255, 204, 0);
+}
+
+.my-btn {
+  background: none;
+  border: none;
+  color: rgb(96, 94, 94);
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.my-btn:hover {
+  background: rgb(255, 255, 255);
+  border: none;
+  color: black;
+}
+
+.card {
+  display: flex;
+  justify-content: space-around;
 }
