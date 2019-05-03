@@ -76,17 +76,27 @@ nav {
 .sidebar {
   /* width: 33.33333%; */
   height: 100vh;
-  font-size: 25px;
+  font-size: 18px;
   font-weight: bold;
-  text-align: center;
+  text-align: left;
+  padding: 50px;
+  margin: 0 auto;
+  text-anchor: middle;
   background: rgb(220, 220, 220);
-  border: 2px sold gray;
+  /* border: 2px sold gray; */
   /* padding: 0;
   margin: 0; */
 }
 
-#city {
-  text-align: left;
-  padding: 20px;
-  margin: 10px;
+span {
+  font-size: 30px;
+  text-align: center;
+  padding: 35px;
+}
+
+.city-box {
+  border-radius: 20px;
+  width: 350px;
+  margin: 1px 0 30px;
+  background: rgb(237, 82, 82);
 }

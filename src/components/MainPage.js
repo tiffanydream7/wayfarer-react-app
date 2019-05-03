@@ -6,12 +6,12 @@ import { Container, Row, Col, Cards } from 'react-bootstrap';
     class MainPage extends Component {
         render() {
             return (
-                <Container>
+                // <Container className="">
                 <Row>
                   <Col><Sidebar /></Col>
                   <Col xs={8}><Profile /></Col>
                 </Row>
-              </Container>
+              // </Container>
             );
         }
     }
