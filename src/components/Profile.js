@@ -42,14 +42,14 @@ class Profile extends Component {
 
     render(){
 
-        let profile = 'proifiel';
+        let profile = 'profile';
         let posts = [];
         let user;
         if(this.state.response){
-            console.log('get it')
+            // console.log('get it')
             user = this.state.response.data;
-            console.log('user:', user)
-            console.log('name:', (user ? user.name : 'nothing'))
+            // console.log('user:', user)
+            // console.log('name:', (user ? user.name : 'nothing'))
             profile = 
             <div className="intro">
                 <h1>{user ? user.name : 'no one yet'}</h1>

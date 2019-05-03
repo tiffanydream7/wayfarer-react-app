@@ -18,7 +18,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <div className=" main container">
+        <div className="cool-box">
           <Switch>
             <Route exact path='/' component={ Landing }/>
             <Route exact path='Blog' component={ Blog }/>
