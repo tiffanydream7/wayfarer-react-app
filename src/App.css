@@ -35,8 +35,6 @@
     width: 300px;
 }
 
-
-
 .landing-page {
     /* position: relative; */
     background: url('./images/travel01.jpeg');
@@ -46,7 +44,6 @@
     margin: 0 !important;
     min-width: 100vw;
     height: 100vh;
-    border: 1px solid red;
 }
 
 nav {
@@ -74,4 +71,22 @@ nav {
   flex-direction: row !important;
   justify-content: space-evenly;
   width: 600vw;
+}
+
+.sidebar {
+  /* width: 33.33333%; */
+  height: 100vh;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  background: rgb(220, 220, 220);
+  border: 2px sold gray;
+  /* padding: 0;
+  margin: 0; */
+}
+
+#city {
+  text-align: left;
+  padding: 20px;
+  margin: 10px;
 }

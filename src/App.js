@@ -8,6 +8,7 @@ import { Route, Link, Switch, withRouter } from 'react-router-dom'
 import SignUp from './components/SignUp/SignUp';
 import LogIn from './components/LogIn/LogIn';
 import Landing from './components/Landing/Landing';
+import MainPage from './components/MainPage';
 // import Profile from './components/Profile';
  
 
@@ -21,8 +22,7 @@ class App extends Component {
         <div className="cool-box">
           <Switch>
             <Route exact path='/' component={ Landing }/>
-            <Route exact path='Blog' component={ Blog }/>
-            <Route path='/Profile' component={ Profile }/>
+            <Route path='/main/profile' component={ MainPage }/>
           </Switch>
         </div>
       </div>
