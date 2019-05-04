@@ -8,13 +8,10 @@ import Blog from "../Blog";
       return (
         <div class="landing-page">
     
-          {/* <Container className='hero-image'> */}
               {/* <Row>
                 <Col><img src={travel01} alt="travel01" /></Col>
               </Row> */}
-          {/* </Container> */}
           <Blog />
-
         </div>
         );
     }

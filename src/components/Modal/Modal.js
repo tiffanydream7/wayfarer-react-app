@@ -28,11 +28,7 @@ handleClose() {
         console.log('form:', this.props.form)
         let title;
         let form = (this.props.form === "Log in") ? <LogIn /> : <SignUp />;
-        // if (this.props.form = "login") {
-        //         return `<LogIn />`
-        // } else {
-        //     return `<SignUp />`
-        // }
+
         return (
             <>
                 <Button className='my-btn' onClick={this.handleShow}>

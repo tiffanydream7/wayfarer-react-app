@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import PostContainer from './PostContainer';
-import { Container, Col, Row, Image } from 'react-bootstrap';
+import { Container, Col, Row, Image, Modal } from 'react-bootstrap';
 import defaultImage from '../images/rorschach.jpg';
 // const API_URL = 'http://localhost:4000/api/v1/users';
 // const userId = '5ccbca39b2d97f4887531faa'
@@ -71,7 +71,7 @@ class Profile extends Component {
                         <Col></Col>
                         <Col></Col>
                         <Col>
-                            <button className="btn btn-alert-warning" onClick={this.editProfile}>Edit Profile</button>
+                            <button className="btn btn-warning" onClick={this.editProfile}>Create New Post</button>
                         </Col>
                     </Row>
                 
