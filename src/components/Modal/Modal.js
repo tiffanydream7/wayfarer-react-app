@@ -3,6 +3,8 @@ import './Modal.css';
 import { Container, Row, Col, Button, Modal, Form } from 'react-bootstrap';
 import LogIn from '../LogIn/LogIn';
 import SignUp from '../SignUp/SignUp';
+import CreateNewPost from '../CreateNewPost';
+import { exportDefaultSpecifier } from '@babel/types';
 
 class Example extends React.Component {
 constructor(props, context) {
@@ -18,21 +20,24 @@ show: false,
 
 handleClose() {
     this.setState({ show: false });
-  }
+}
     
-  handleShow = () => {
+handleShow = () => {
     this.setState({ show: true });
-  }
+}
 
     render() {
         console.log('form:', this.props.form)
         let title;
-        let form = (this.props.form === "Log in") ? <LogIn /> : <SignUp />;
-        // if (this.props.form = "login") {
-        //         return `<LogIn />`
-        // } else {
-        //     return `<SignUp />`
-        // }
+        let form = () =>{
+        if(this.props.form === "Log in"){
+            return <LogIn onHide={this.handleClose}/> 
+        }else if(this.props.form === "Sign in"){
+            <SignUp onHide={this.handleClose}/>
+        }else{
+            <CreateNewPost onHide={this.handleClose}/>
+        }
+}
         return (
             <>
                 <Button className='my-btn' onClick={this.handleShow}>

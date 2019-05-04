@@ -13,7 +13,6 @@ const endPoint = 'https://teamblueapi.herokuapp.com/api/v1/auth/signup'
   
 class SignUp extends Component {
     state = {
-    // formData:
     username: '',
     currentCity: '',
     email: '',
@@ -26,6 +25,7 @@ class SignUp extends Component {
         axios.post(endPoint, this.state)
           .then(response => {
             console.log(response);
+            this.handleSuccess(response.data.newUser)
           })
           .catch(error => {
             console.log(error);
@@ -35,12 +35,15 @@ class SignUp extends Component {
     formChange = event => {
         const key = event.target.id;
         const value = event.target.value;
-        // const newState = 
         this.setState({
-            // formData: {
                 [key]: value
-            // }
         })
+    }
+
+    handleSuccess = response => {
+        console.log('please handle', response)
+        console.log('<Redirect')
+        this.props.onHide();
     }
 
     render() {
