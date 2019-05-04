@@ -29,6 +29,7 @@ handleShow = () => {
     render() {
         console.log('form:', this.props.form)
         let title;
+
         let form = () =>{
         if(this.props.form === "Log in"){
             return <LogIn onHide={this.handleClose}/> 
@@ -38,7 +39,8 @@ handleShow = () => {
             <CreateNewPost onHide={this.handleClose}/>
         }
 }
-        return (
+
+          return (
             <>
                 <Button className='my-btn' onClick={this.handleShow}>
                     {this.props.form}

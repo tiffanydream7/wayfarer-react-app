@@ -8,8 +8,6 @@ import NavContainer from './NavContainer';
 
 
 class Header extends Component {
-
-
   
     render() {
         return (
