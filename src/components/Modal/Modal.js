@@ -34,9 +34,9 @@ handleShow = () => {
         if(this.props.form === "Log in"){
             return <LogIn onHide={this.handleClose}/> 
         }else if(this.props.form === "Sign in"){
-            <SignUp onHide={this.handleClose}/>
+            return <SignUp onHide={this.handleClose}/>
         }else{
-            <CreateNewPost onHide={this.handleClose}/>
+            return <CreateNewPost onHide={this.handleClose}/>
         }
 }
 
