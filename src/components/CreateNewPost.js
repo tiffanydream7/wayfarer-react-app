@@ -42,29 +42,32 @@ class CreateNewPost extends Component {
     render() {
         return (
             <Form onSubmit={this.formSubmit}>
-                <DropdownButton id="dropdown-basic-button" title="Choose City">
-                <Dropdown.Item onCLick={this.state.city}>London</Dropdown.Item>
-                <Dropdown.Item onCLick={this.state.city}>Sydney</Dropdown.Item>
-                <Dropdown.Item onCLick={this.state.city}>San Francisco</Dropdown.Item>
-                <Dropdown.Item onCLick={this.state.city}>Seattle</Dropdown.Item>
-                </DropdownButton>
-            <Form.Group onChange={this.formChange} controlId="title" required>
-                <Form.Label>Title</Form.Label>
-                <Form.Control type="text" name="title" placeholder="" />
-            </Form.Group>
-            <Form.Group controlId="exampleForm.ControlTextarea1">
-                <Form.Label>Message</Form.Label>
-                <Form.Control as="textarea" rows="3" />
-            </Form.Group>
+                <Form.Group controlId="exampleForm.ControlSelect1">
+                    <Form.Label>Example select</Form.Label>
+                    <Form.Control as="select">
+                    <option>London</option>
+                    <option>Sydney</option>
+                    <option>San Francisco</option>
+                    <option>Seattle</option>
+                    </Form.Control>
+                </Form.Group>
+                <Form.Group onChange={this.formChange} controlId="title" required>
+                    <Form.Label>Title</Form.Label>
+                    <Form.Control type="text" name="title" placeholder="" />
+                </Form.Group>
+                <Form.Group controlId="exampleForm.ControlTextarea1">
+                    <Form.Label>Message</Form.Label>
+                    <Form.Control as="textarea" rows="3" />
+                </Form.Group>
 
-            <Form.Group controlId="formBasicChecbox">
-            </Form.Group>
-            <Button
-                variant="primary"
-                type="submit">
-                Submit
-            </Button>
-        </Form>
+                <Form.Group controlId="formBasicChecbox">
+                </Form.Group>
+                <Button
+                    variant="primary"
+                    type="submit">
+                    Submit
+                </Button>
+            </Form>
         );
     }
     }
