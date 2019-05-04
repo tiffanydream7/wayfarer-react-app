@@ -11,7 +11,7 @@ class Header extends Component {
   
     render() {
         return (
-          <header>
+          <header onClick={this.props.onClick}>
             <title>Wayfarer</title>
             <nav>
                <Container className='header-box'>

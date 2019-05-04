@@ -15,12 +15,22 @@ import CreateNewPost from './components/CreateNewPost';
  
 
 class App extends Component {
- 
+ state = {
+   info: false
+ }
+
+ addInfo = (event) => {
+   this.setState({
+     info: event.target
+   })
+   console.log(this.state)
+ }
+
 
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header onClick={this.addInfo}/>
         <div className="cool-box">
           <Switch>
             <Route exact path='/' component={ Landing }/>

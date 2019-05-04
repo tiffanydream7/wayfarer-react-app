@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 
-    class CityProfile extends Component {
+class CityProfile extends Component {
     render() {
         return (
         <div>CityProfile</div>
@@ -10,5 +10,5 @@ import React, { Component } from "react";
     }
 
 
-    export default CityProfile;
+export default CityProfile;
     
