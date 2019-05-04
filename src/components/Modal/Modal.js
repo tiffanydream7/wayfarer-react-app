@@ -4,7 +4,7 @@ import { Container, Row, Col, Button, Modal, Form } from 'react-bootstrap';
 import LogIn from '../LogIn/LogIn';
 import SignUp from '../SignUp/SignUp';
 import CreateNewPost from '../CreateNewPost';
-import { exportDefaultSpecifier } from '@babel/types';
+// import { exportDefaultSpecifier } from '@babel/types';
 
 class Example extends React.Component {
 constructor(props, context) {
@@ -25,20 +25,29 @@ handleClose() {
 handleShow = () => {
     this.setState({ show: true });
 }
+    
+// form = formType =>{
+//     if(this.props.form === "Log in"){
+//         return <LogIn onHide={this.handleClose}/> 
+//     }else if(this.props.form === "Sign in"){
+//         return <SignUp onHide={this.handleClose}/>
+//     }else{
+//         return <CreateNewPost onHide={this.handleClose}/>
+//     }
+// }
 
     render() {
         console.log('form:', this.props.form)
         let title;
-
-        let form = () =>{
-        if(this.props.form === "Log in"){
-            return <LogIn onHide={this.handleClose}/> 
-        }else if(this.props.form === "Sign in"){
-            <SignUp onHide={this.handleClose}/>
+        let form;
+        if(this.props.form === "Login"){
+            form = <LogIn onHide={this.handleClose}/> 
+        }else if(this.props.form === "Sign up"){
+            form = <SignUp onHide={this.handleClose}/>
         }else{
-            <CreateNewPost onHide={this.handleClose}/>
+            form = <CreateNewPost onHide={this.handleClose}/>
         }
-}
+        
 
           return (
             <>

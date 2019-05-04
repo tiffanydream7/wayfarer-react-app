@@ -6,6 +6,7 @@ import defaultImage from '../images/rorschach.jpg';
 // const API_URL = 'http://localhost:4000/api/v1/users';
 // const userId = '5ccbca39b2d97f4887531faa'
 import fakeUser from '../fakeUser'
+import Example from './Modal/Modal'
 
 
 class Profile extends Component {
@@ -71,7 +72,7 @@ class Profile extends Component {
                         <Col></Col>
                         <Col></Col>
                         <Col>
-                            <button className="btn btn-warning" onClick={this.editProfile}>Create New Post</button>
+                            <Example form="Create New Post" className="btn btn-warning" />
                         </Col>
                     </Row>
                 
