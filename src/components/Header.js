@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Example from './Modal/Modal';
 import logo from '../images/logo.png';
 import travel01 from '../images/travel01.jpeg';
+import NavContainer from './NavContainer';
 
 
 class Header extends Component {
@@ -21,10 +22,7 @@ class Header extends Component {
                 <Link to={'/'}></Link>
                 <Col>Wayfarer</Col><Link to={'/'}></Link>
             </Row>
-            <Row className='signin-bar'>
-                <Col></Col><Example form='Log in' />
-                <Col></Col><Example form='Sign up' />
-                </Row>
+              <NavContainer />
               </Container>
             </nav>
 

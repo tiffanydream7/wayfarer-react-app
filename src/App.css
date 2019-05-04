@@ -98,5 +98,24 @@ span {
   border-radius: 20px;
   width: 350px;
   margin: 1px 0 30px;
-  background: rgb(237, 82, 82);
+  background: white;
+}
+
+.post-box {
+  border-radius: 15px;
+  margin: 1px 0 30px;
+  background: rgb(244, 244, 243);
+  text-align: left;
+}
+
+.box {
+  border-radius: 100px;
+  margin: 25px 0;
+  height: 220px;
+}
+
+#city-text {
+  margin: 3px;
+  padding: 10px;
+  font-size: 14px;
 }

@@ -3,29 +3,30 @@ import axios from 'axios';
 import PostContainer from './PostContainer';
 import { Container, Col, Row, Image } from 'react-bootstrap';
 import defaultImage from '../images/rorschach.jpg';
-const API_URL = 'http://localhost:4000/api/v1/users';
-const userId = '5ccbca39b2d97f4887531faa'
+// const API_URL = 'http://localhost:4000/api/v1/users';
+// const userId = '5ccbca39b2d97f4887531faa'
+import fakeUser from '../fakeUser'
 
 
 class Profile extends Component {
     state = {
-        response:{}
+        response: fakeUser
     }
 
 
-    getUser = () => {
-        axios.get(`${API_URL}/${userId}`)
-        .then((res) => {
-            console.log(res)
-            this.setState({
-                response: res.data
-            });
-        })
-    }
+    // getUser = () => {
+    //     axios.get(`${API_URL}/${userId}`)
+    //     .then((res) => {
+    //         console.log(res)
+    //         this.setState({
+    //             response: res.data
+    //         });
+    //     })
+    // }
 
-    componentDidMount = () => {
-        this.getUser()
-    }
+    // componentDidMount = () => {
+    //     this.getUser()
+    // }
 
     editProfile = event => {
         event.preventDefault();
@@ -39,13 +40,13 @@ class Profile extends Component {
     }
 
     render(){
-
+        console.log(this.state.response)
         let profile = 'profile';
         let posts = [];
         let user;
         if(this.state.response){
             // console.log('get it')
-            user = this.state.response.data;
+            user = this.state.response;
             // console.log('user:', user)
             // console.log('name:', (user ? user.name : 'nothing'))
             profile = (
@@ -70,7 +71,7 @@ class Profile extends Component {
                         <Col></Col>
                         <Col></Col>
                         <Col>
-                            <button className="btn btn-alert" onClick={this.editProfile}>Edit Profile</button>
+                            <button className="btn btn-alert-warning" onClick={this.editProfile}>Edit Profile</button>
                         </Col>
                     </Row>
                 

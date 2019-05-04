@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ListGroup, Container, Row, Col, Button, Collapse } from 'react-bootstrap';
-import { logo } from '../images/logo.png';
+import travel03 from '../images/travel03.jpeg';
 
 
     class Post extends Component {
@@ -26,25 +26,21 @@ import { logo } from '../images/logo.png';
         };
         return (
         <div>
-            <ListGroup.Item action variant={`${this.props.color}`}
-          // onClick={this.toggleCollapse}
-          onClick={console.log('you pushed ' + this.props.post)}
-          // aria-controls="example-collapse-text"
-          // aria-expanded={this.state.open}
-        >
-        {logo}
-        <h4>{this.props.post.title}</h4>
-        <p>{abridged(this.props.post.content)}</p>
-        </ListGroup.Item>
-        {/* <Collapse in={this.state.open}>
-          <div id="example-collapse-text">
-          <p>{this.props.post.content}</p>
-          </div>
-        </Collapse> */}
+          <ListGroup.Item className="box" action variant={`${this.props.color}`}
+              onClick={console.log('you pushed ' + this.props.post)}>
+         
+            <Row className="post-box">
+                    <Col><img src={travel03} alt="travel"
+                  width='400px' height='200px' /></Col>
+                 <hr></hr>
+                  <Col id="city-text"><h4>{this.props.post.title}</h4>
+            <p>{abridged(this.props.post.content)}</p></Col>
+                </Row>
+          </ListGroup.Item>
         </div>
         );
     }
-    }
+  }
 
 
     export default Post;
