@@ -2,14 +2,7 @@ import React, { Component } from "react";
 import { Container, Row, Col, Button, Modal, Form } from 'react-bootstrap';
 import axios from 'axios'
 
-const endPoint = 'localhost:4000/api/v1/auth/login'
-
-class TodoModel {
-    static all(){
-      let request = axios.get(endPoint)
-      return request
-    }
-}
+const endPoint = 'https://teamblueapi.herokuapp.com/api/v1/auth/login'
 
 class LogIn extends Component {
     state = {
@@ -22,6 +15,13 @@ class LogIn extends Component {
     formSubmit = event => {
         event.preventDefault();
         console.log(this.state)
+        axios.post(endPoint, this.state)
+          .then((response) => {
+            console.log(response);
+          })
+          .catch(error => {
+            console.log(error);
+          });
     }
 
     formChange = event => {
@@ -34,8 +34,8 @@ class LogIn extends Component {
         
             // }
         })
-        console.log('email:', this.state.email)
-        console.log('password:', this.state.password)
+        // console.log('email:', this.state.email)
+        // console.log('password:', this.state.password)
 
         // console.log(event.target.id, event.target.value)
     }
