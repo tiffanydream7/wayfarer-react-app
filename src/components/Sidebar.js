@@ -32,7 +32,7 @@ class Sidebar extends Component {
                 </Row>
 
                 <Row className="city-box" onClick={this.getRed} checked>
-                    <Col><img src={sydney} alt="sydney"
+                    <Col ><img src={sydney} alt="sydney"
                         width='150px' height='90px' /></Col>
                   <Col>Sydney</Col>
                 </Row>

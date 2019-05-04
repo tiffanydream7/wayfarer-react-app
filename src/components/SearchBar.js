@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { Container, Row, Col } from 'react-bootstrap';
-import Example from './Modal/Modal';
+import { Container, Col, Row, Image } from 'react-bootstrap';
 import logo from '../images/logo.png';
-import travel01 from '../images/travel01.jpeg';
 
+class SearchBar extends Component {
+    state = { term: '' };
 
-class Header extends Component {
+    onFormSubmit(event) {
+        event.preventDefault();
+    }
+
     render() {
         return (
           <header>
@@ -18,11 +22,17 @@ class Header extends Component {
                 <Link to={'/'}></Link>
                 <Col>Wayfarer</Col><Link to={'/'}></Link>
             </Row>
-            <Row className='signin-bar'>
-                
-                  {/* <Col></Col><Example form='Log in' />
-                <Col></Col><Example form='Sign up' /> */}
-                </Row>
+            <div>
+                <form onSubmit={this.onFormSubmit}>
+                    <input type="text" placeholder="Search"
+                    value={this.state.term}
+                    onChange={e => this.setState({ term: e.target.value})} />
+                    
+                </form>
+            </div>
+                        
+
+
               </Container>
             </nav>
 
@@ -32,5 +42,5 @@ class Header extends Component {
     }
 }
 
-export default Header
+export default SearchBar
 
