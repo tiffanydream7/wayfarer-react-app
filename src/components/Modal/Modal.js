@@ -27,8 +27,8 @@ handleShow = () => {
     this.setState({ show: true });
 }
     
-read = word => {
-    console.log('hell', word)
+modalRead = word => {
+    this.props.navRead(word)
 }
 
 conLog = () => {
@@ -45,7 +45,7 @@ conLog = () => {
         }else if(this.props.form === "Sign up"){
             form = <SignUp onHide={this.handleClose}/>
         }else if(this.props.form === "LogOut"){
-            form = <LogOut onHide={this.handleClose} logger={this.conLog} yesm={this.read}/>
+            form = <LogOut onHide={this.handleClose} logger={this.conLog} yesm={this.modalRead}/>
         }else{
             form = <CreateNewPost onHide={this.handleClose}/>
         }

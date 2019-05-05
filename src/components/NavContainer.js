@@ -49,7 +49,7 @@ class NavContainer extends Component {
             
               {/* {login ? ( */}
             {/* <li onClick={this.state.login_}></li> */}
-            <Col></Col><Example logger={this.logToggler} yesm={this.read} form='LogOut' />
+            <Col></Col><Example logger={this.logToggler} navRead={this.read} form='LogOut' />
             <button onClick={this.moveAround}>Redirect</button>
             <button onClick={this.getState}>stte</button>
             
