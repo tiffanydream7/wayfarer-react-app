@@ -43,7 +43,7 @@ conLog = () => {
         if(this.props.form === "Login"){
             form = <LogIn onHide={this.handleClose}/> 
         }else if(this.props.form === "Sign up"){
-            form = <SignUp onHide={this.handleClose}/>
+            form = <SignUp onHide={this.handleClose} getGuy={this.props.signer}/>
         }else if(this.props.form === "LogOut"){
             form = <LogOut onHide={this.handleClose} logger={this.conLog} yesm={this.modalRead}/>
         }else{

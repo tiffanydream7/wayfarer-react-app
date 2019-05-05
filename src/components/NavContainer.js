@@ -38,6 +38,10 @@ class NavContainer extends Component {
       this.props.history.push(`/main/profile/${userId}`);
     }
 
+    whosUsing = userman => {
+      console.log(userman)
+    }
+
 
       render() {
 
@@ -45,7 +49,7 @@ class NavContainer extends Component {
             
             <Row className='signin-bar'>
             <Col></Col><Example logger={this.logToggler} form='Login' />
-            <Col></Col><Example logger={this.logToggler} form='Sign up' />
+            <Col></Col><Example logger={this.logToggler} signer={this.whosUsing} form='Sign up' />
             
               {/* {login ? ( */}
             {/* <li onClick={this.state.login_}></li> */}

@@ -43,6 +43,7 @@ class SignUp extends Component {
     handleSuccess = response => {
         console.log('please handle', response)
         console.log('<Redirect')
+        this.props.getGuy('i think it will work')
         this.props.onHide();
     }
 
