@@ -16,6 +16,14 @@ import Blog from "../Blog";
               </Row>
           </div>
       );
+        <div className="landing-page">
+    
+              {/* <Row>
+                <Col><img src={travel01} alt="travel01" /></Col>
+              </Row> */}
+          <Blog />
+        </div>
+        );
     }
     }
 

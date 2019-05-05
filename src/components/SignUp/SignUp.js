@@ -43,6 +43,7 @@ class SignUp extends Component {
     handleSuccess = response => {
         console.log('please handle', response)
         console.log('<Redirect')
+        this.props.getGuy('i think it will work')
         this.props.onHide();
     }
 
@@ -58,9 +59,19 @@ class SignUp extends Component {
                     <Form.Control type="text" name="username" placeholder="" />
                 </Form.Group>
 
-                <Form.Group onChange={this.formChange} controlId="currentCity" required>
+                {/* <Form.Group onChange={this.formChange} controlId="currentCity" required>
                     <Form.Label>Current City</Form.Label>
                     <Form.Control type="text" name="currentCity" placeholder="" />
+                </Form.Group> */}
+
+                <Form.Group onChange={this.formChange} controlId="currentCity">
+                    <Form.Label>Current City</Form.Label>
+                    <Form.Control as="select">
+                    <option>London</option>
+                    <option>Sydney</option>
+                    <option>San Francisco</option>
+                    <option>Seattle</option>
+                    </Form.Control>
                 </Form.Group>
 
                 <Form.Group onChange={this.formChange} controlId="email" required>

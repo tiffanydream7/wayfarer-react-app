@@ -60,7 +60,7 @@ class App extends Component {
         <div className="cool-box">
           <Switch>
             <Route exact path='/' component={ Landing }/>
-            <Route path='/main/profile' component={ MainPage }/>
+            <Route path='/main/profile/:userId' component={ MainPage }/>
             <Route path='/search' component={ SearchBar }/>
           </Switch>
         </div>
@@ -69,4 +69,4 @@ class App extends Component {
   );
 }}
 
-export default App;
+export default withRouter(App);
