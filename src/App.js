@@ -10,10 +10,36 @@ import LogIn from './components/LogIn/LogIn';
 import Landing from './components/Landing/Landing';
 import MainPage from './components/MainPage';
 import SearchBar from './components/SearchBar';
-// import Profile from './components/Profile';
- 
+import Particles from 'react-particles-js';
 
+
+const particlesOptions = {
+  particles: {
+    "number": {
+      "value": 150,
+      "density": {
+        "enable": true,
+        "value_area": 1803
+      }
+    }
+  }
+}
+
+//     Particles: {
+//     number: {
+//         value: 40,
+//         density: {
+//          enable: true,
+//          value_area:30 
+//       }
+//     }
+//        }
+// }
+      
 class App extends Component {
+  // onSearchSubmit(term) {
+  //   console.log(term);
+  // }
  state = {
    info: false
  }
@@ -25,11 +51,12 @@ class App extends Component {
    console.log(this.state)
  }
 
-
   render() {
     return (
       <div className="App">
-        <Header />
+        <Particles className="particles"
+          params={particlesOptions} />
+        <Header onClick={this.addInfo}/>
         <div className="cool-box">
           <Switch>
             <Route exact path='/' component={ Landing }/>
