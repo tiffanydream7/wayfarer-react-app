@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Button, Modal, Form } from 'react-bootstrap';
-import axios from 'axios'
+// import axios from 'axios'
+import AuthModel from '../../models/AuthModel'
 
-const endPoint = 'https://teamblueapi.herokuapp.com/api/v1/auth/login'
+// const endPoint = 'https://teamblueapi.herokuapp.com/api/v1/auth/login'
 
 class LogIn extends Component {
     state = {
@@ -13,13 +14,18 @@ class LogIn extends Component {
     formSubmit = event => {
         event.preventDefault();
         console.log(this.state)
-        axios.post(endPoint, this.state)
+        AuthModel.login(this.state)
           .then((response) => {
-            console.log(response);
+            this.handleSuccess(response);
           })
           .catch(error => {
             console.log(error);
           });
+    }
+
+    handleSuccess(response){
+        console.log('at login', response)
+        this.props.getGuy(response)
     }
 
     formChange = event => {

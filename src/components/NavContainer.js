@@ -39,7 +39,7 @@ class NavContainer extends Component {
     }
 
     whosUsing = userman => {
-      console.log(userman)
+      console.log('at nav:', userman.data)
     }
 
 
@@ -48,8 +48,8 @@ class NavContainer extends Component {
           return (
             
             <Row className='signin-bar'>
-            <Col></Col><Example logger={this.logToggler} form='Login' />
-            <Col></Col><Example logger={this.logToggler} signer={this.whosUsing} form='Sign up' />
+            <Col></Col><Example logger={this.logToggler} signer={this.whosUsing} form='Login' />
+            <Col></Col><Example logger={this.logToggler}  form='Sign up' />
             
               {/* {login ? ( */}
             {/* <li onClick={this.state.login_}></li> */}

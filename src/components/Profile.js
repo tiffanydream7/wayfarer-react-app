@@ -6,6 +6,7 @@ import defaultImage from '../images/rorschach.jpg';
 // const userId = '5ccbca39b2d97f4887531faa'
 import fakeUser from '../fakeUser'
 import Example from './Modal/Modal'
+import UserModel from '../models/UserModel';
 const API_URL = 'https://teamblueapi.herokuapp.com/api/v1/users';
 
 
@@ -16,7 +17,8 @@ class Profile extends Component {
 
 
     getUser = () => {
-        axios.get(`${API_URL}/${this.props.userId}`)
+        // axios.get(`${API_URL}/${this.props.userId}`)
+        UserModel.getProfile(this.props.userId)
         .then((res) => {
             console.log(res.data)
             this.setState({
