@@ -6,9 +6,9 @@ import Example from './Modal/Modal';
 
 
 class NavContainer extends Component {
-  // state = {
-  //   login: false
-  // };
+  state = {
+    login: false
+  };
 
       render() {
         // let { login } = this.state;

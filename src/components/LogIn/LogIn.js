@@ -39,28 +39,28 @@ class LogIn extends Component {
 
         // console.log(event.target.id, event.target.value)
     }
-        render() {
-            return (
-                <Form onSubmit={this.formSubmit}>
-                    <Form.Group onChange={this.formChange} controlId="email" required>
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" name="email" placeholder="" />
-                    </Form.Group>
-                    <Form.Group onChange={this.formChange} controlId="password" required>
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" name="password" placeholder="" />
-                    </Form.Group>
+    render() {
+        return (
+            <Form onSubmit={this.formSubmit}>
+                <Form.Group onChange={this.formChange} controlId="email" required>
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control type="email" name="email" placeholder="" />
+                </Form.Group>
+                <Form.Group onChange={this.formChange} controlId="password" required>
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control type="password" name="password" placeholder="" />
+                </Form.Group>
 
-                    <Form.Group controlId="formBasicChecbox">
-                    </Form.Group>
-                    <Button
-                        variant="primary"
-                        type="submit">
-                        Submit
-                    </Button>
-                </Form>
-            );
-        }
+                <Form.Group controlId="formBasicChecbox">
+                </Form.Group>
+                <Button
+                    variant="primary"
+                    type="submit">
+                    Submit
+                </Button>
+            </Form>
+        );
+    }
     }
 
 
