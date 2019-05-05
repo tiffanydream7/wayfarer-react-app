@@ -4,6 +4,7 @@ import { Container, Row, Col, Button, Modal, Form } from 'react-bootstrap';
 import LogIn from '../LogIn/LogIn';
 import SignUp from '../SignUp/SignUp';
 import CreateNewPost from '../CreateNewPost';
+import LogOut from '../LogOut/LogOut';
 // import { exportDefaultSpecifier } from '@babel/types';
 
 class Example extends React.Component {
@@ -26,15 +27,14 @@ handleShow = () => {
     this.setState({ show: true });
 }
     
-// form = formType =>{
-//     if(this.props.form === "Log in"){
-//         return <LogIn onHide={this.handleClose}/> 
-//     }else if(this.props.form === "Sign in"){
-//         return <SignUp onHide={this.handleClose}/>
-//     }else{
-//         return <CreateNewPost onHide={this.handleClose}/>
-//     }
-// }
+read = word => {
+    console.log('hell', word)
+}
+
+conLog = () => {
+    console.log('yeah out of there')
+}
+
 
     render() {
         console.log('form:', this.props.form)
@@ -44,6 +44,8 @@ handleShow = () => {
             form = <LogIn onHide={this.handleClose}/> 
         }else if(this.props.form === "Sign up"){
             form = <SignUp onHide={this.handleClose}/>
+        }else if(this.props.form === "LogOut"){
+            form = <LogOut onHide={this.handleClose} logger={this.conLog} yesm={this.read}/>
         }else{
             form = <CreateNewPost onHide={this.handleClose}/>
         }

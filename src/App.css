@@ -1,21 +1,27 @@
 /* ------------------------------------------------
   G L O B A L  S T Y L E S
 ---------------------------------------------------*/
+
+
 /* basic reset */
+
+
 /* *, *:before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; */
+
+
 /* } */
 
 .header-box {
-  display: flex;
-  /* flex-direction: row; */
-  justify-content: space-around;
-  max-width: 100%;
-  padding: 0;
-  margin: 0 auto;
-  border: none;
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-around;
+    max-width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    border: none;
 }
 
 .logo {
@@ -47,75 +53,83 @@
 }
 
 nav {
-  background: rgb(255, 204, 0);
+    background: rgb(255, 204, 0);
 }
 
 .my-btn {
-  background: none;
-  border: none;
-  color: rgb(96, 94, 94);
-  font-size: 15px;
-  font-weight: bold;
+    background: none;
+    border: none;
+    color: rgb(96, 94, 94);
+    font-size: 15px;
+    font-weight: bold;
 }
 
 .my-btn:hover {
-  background: rgb(255, 255, 255);
-  border: none;
-  color: black;
+    background: rgb(255, 255, 255);
+    border: none;
+    color: black;
 }
 
 .blog {
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  flex-direction: row !important;
-  justify-content: space-evenly;
-  width: 600vw;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-evenly;
+    width: 600vw;
 }
 
 .sidebar {
-  /* width: 33.33333%; */
-  height: 100vh;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: left;
-  padding: 50px;
-  margin: 0 auto;
-  text-anchor: middle;
-  background: rgb(220, 220, 220);
-  /* border: 2px sold gray; */
-  /* padding: 0;
+    /* width: 33.33333%; */
+    height: 100vh;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    padding: 50px;
+    margin: 0 auto;
+    text-anchor: middle;
+    background: rgb(220, 220, 220);
+    /* border: 2px sold gray; */
+    /* padding: 0;
   margin: 0; */
 }
 
 span {
-  font-size: 30px;
-  text-align: center;
-  padding: 35px;
+    font-size: 30px;
+    text-align: center;
+    padding: 35px;
 }
 
 .city-box {
-  border-radius: 20px;
-  width: 350px;
-  margin: 1px 0 30px;
-  background: white;
+    border-radius: 20px;
+    width: 350px;
+    margin: 1px 0 30px;
+    background: white;
 }
 
 .post-box {
-  border-radius: 15px;
-  margin: 1px 0 30px;
-  background: rgb(244, 244, 243);
-  text-align: left;
+    border-radius: 15px;
+    margin: 1px 0 30px;
+    background: rgb(244, 244, 243);
+    text-align: left;
 }
 
 .box {
-  border-radius: 100px;
-  margin: 25px 0;
-  height: 220px;
+    border-radius: 100px;
+    margin: 25px 0;
+    height: 220px;
 }
 
 #city-text {
-  margin: 3px;
-  padding: 10px;
-  font-size: 14px;
+    margin: 3px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+#my-sidebar {
+    width: 33vw;
+}
+
+.profile-margin {
+    margin: 6%;
 }

@@ -6,7 +6,7 @@ import Blog from "../Blog";
     class Landing extends Component {
     render() {
       return (
-        <div class="landing-page">
+        <div className="landing-page">
     
               {/* <Row>
                 <Col><img src={travel01} alt="travel01" /></Col>
