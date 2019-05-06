@@ -42,8 +42,8 @@ class SignUp extends Component {
 
     handleSuccess = response => {
         console.log('please handle', response)
-        console.log('<Redirect')
-        this.props.getGuy('i think it will work')
+        // console.log('<Redirect')
+        // this.props.getGuy('i think it will work')
         this.props.onHide();
     }
 
@@ -89,8 +89,8 @@ class SignUp extends Component {
                     <Form.Control type="password" name="password2" placeholder="" />
                 </Form.Group>
 
-                <Form.Group controlId="formBasicChecbox">
-                </Form.Group>
+                {/* <Form.Group controlId="formBasicChecbox">
+                </Form.Group> */}
                 <Button
                     variant="primary"
                     type="submit">
