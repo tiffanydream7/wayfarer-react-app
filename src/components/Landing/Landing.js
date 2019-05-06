@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import travel01 from '../../images/travel01.jpeg';
 import travel02 from '../../images/travel02.jpeg';
 import Blog from "../Blog";
+import Particles from "react-particles-js";
 
     class Landing extends Component {
     render() {
@@ -14,6 +15,9 @@ import Blog from "../Blog";
           <Row>
             <Col><Blog /></Col>
               </Row>
+              <Particles className="particles" />
+
+
           </div>
       );
    

@@ -11,12 +11,14 @@ class Sidebar extends Component {
     getRed = (event) => {
     // when user click a city, it will turn yellow and the rest turn pink
         let allCity = document.querySelectorAll('.city-box')
+        console.log('getRed');
         allCity.forEach(city => {
             city.setAttribute('style', 'background: white')
         })
 
         let city = event.target.parentNode
-        city.setAttribute('style', 'background: rgb(237, 82, 82)')
+        // city.setAttribute('style', 'background: rgb(237, 82, 82)')
+        city.setAttribute('style', 'background: red')
     }
 
     render() {
@@ -25,6 +27,7 @@ class Sidebar extends Component {
 
             <div className="sidebar">
                 <div><span>Cities</span></div>
+
                 <Row className="city-box" onClick={this.getRed}>
                     <Col><img src={london} alt="london"
                         width='150px' height='90px' /></Col>

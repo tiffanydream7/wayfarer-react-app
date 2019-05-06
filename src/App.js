@@ -56,14 +56,14 @@ class App extends Component {
 
     render() {
         return ( <div className="App">
-            <Particles className="particles"
-            params = { particlesOptions }/> 
+            {/* <Particles className="particles" */}
+            {/* params = { particlesOptions }/>  */}
             <Header onClick = { this.addInfo }/> 
             <div className = "cool-box" >
             <Switch>
             <Route exact path = '/'component = { Landing }/> 
-            <Route path = '/main/profile/:userId'
-            component = { MainPage }/> 
+            {/* <Route path = '/main/profile/:userId'component = { MainPage }/>  */}
+            <Route path = '/main' component = { MainPage }/> 
             <Route path = '/search' component = { SearchBar }/> 
             <Route path = '/tryposts' component = { PostProfile }/> 
             </Switch> 

@@ -44,7 +44,7 @@
 .landing-page {
     /* background: url('./images/travel01.jpeg');
     background-repeat: no-repeat;
-    background-size: cover; */  
+    background-size: cover; */
     background: linear-gradient(69deg, rgb(7, 27, 179), rgb(6, 12, 82));
     padding: 0;
     margin: 0 !important;
@@ -121,19 +121,18 @@ span {
 }
 
 #city-text {
-  margin: 3px;
-  padding: 10px;
-  font-size: 14px;
+    margin: 3px;
+    padding: 10px;
+    font-size: 14px;
 }
 
 .particles {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 18;
-  height: 80vh;
-  
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 18;
+    height: 80vh;
     /* margin: 3px;
     padding: 10px;
     font-size: 14px; */
@@ -145,4 +144,9 @@ span {
 
 .profile-margin {
     margin: 6%;
+}
+
+.profile-photo {
+    width: 40%;
+    border-radius: 20px;
 }

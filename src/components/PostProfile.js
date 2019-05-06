@@ -64,7 +64,7 @@ class PostProfile extends Component {
                 <h1>by {post ? post.user : 'anon'}</h1>
                 <h3>in {post ? post.city : 'world globe'}</h3>
                 {/* <h4>on {post ? post.joinDate : 'saturday i think ?'}</h4> */}
-                <h4> on {user ? user.joinDate.slice(0, 10) : 'saturday i think ?'}</h4>
+                <h4> on {post ? post.joinDate.slice(0, 10) : 'saturday i think ?'}</h4>
             </div>)
             
             content = post ? post.content : [{post: false}];

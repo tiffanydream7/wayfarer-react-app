@@ -8,6 +8,8 @@ import { Route, Link, Switch, withRouter } from 'react-router-dom';
     class MainPage extends Component {
         render() {
           const { userId } = this.props.match.params;
+          console.log('match id: ', userId)
+          console.log('match', this.props.match )
 
             return (
                 // <Container className="">
@@ -15,7 +17,10 @@ import { Route, Link, Switch, withRouter } from 'react-router-dom';
                   <Col id="my-sidebar"><Sidebar /></Col>
                   <Col xs={8}>
                     <div className="profile-margin">
-                      <Profile userId={userId}/>
+                      <Switch>
+                        {/* <Profile userId={userId}/> */}
+                        <Route path={this.props.match.url + '/profile/:userId'}  component = { Profile }/> 
+                      </Switch>
                     </div>
                   </Col>
                 </Row>

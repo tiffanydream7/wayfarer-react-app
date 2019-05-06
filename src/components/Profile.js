@@ -15,10 +15,12 @@ class Profile extends Component {
         response: fakeUser
     }
 
+    
+
 
     getUser = () => {
         // axios.get(`${API_URL}/${this.props.userId}`)
-        UserModel.getProfile(this.props.userId)
+        UserModel.getProfile(this.props.match.params.userId)
         .then((res) => {
             console.log(res.data)
             this.setState({
@@ -48,6 +50,11 @@ class Profile extends Component {
     }
 
     render(){
+
+        const { userId } = this.props.match.params;
+          console.log('match id: ', userId)
+          console.log('match', this.props.match )
+
         console.log(this.state.response)
         let profile = 'profile';
         let posts = [];
@@ -61,8 +68,8 @@ class Profile extends Component {
             <div className="intro">
                 <h1>{user ? user.username : 'no one yet'}</h1>
                 <h2>{user ? user.currentCity : 'nowhere at all'}</h2>
-                <h4>{user ? 'joined ' + user.joinDate : 'nowhere at all'}</h4>
-                {/* <h4>{user ? 'joined ' + user.joinDate.slice(0, 10) : 'nowhere at all'}</h4> */}
+                {/* <h4>{user ? 'joined ' + user.joinDate : 'nowhere at all'}</h4> */}
+                <h4>{user ? 'joined ' + user.joinDate.slice(0, 10) : 'no join'}</h4>
             </div>)
             
             posts = user ? user.posts : [{user: false}];
