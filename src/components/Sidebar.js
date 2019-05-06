@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Route, Link, Switch, withRouter } from 'react-router-dom'
 import travel02 from '../images/travel02.jpeg';
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import london from '../images/london.jpg';
@@ -17,7 +18,11 @@ class Sidebar extends Component {
         })
 
         let city = event.target.parentNode
+        console.log(city.id)
+    
         city.setAttribute('style', 'background: rgb(237, 82, 82)')
+        this.props.history.push(`/main/cities/${city.id}`)
+
         // city.setAttribute('style', 'background: red')
     }
 
@@ -28,25 +33,25 @@ class Sidebar extends Component {
             <div className="sidebar">
                 <div><span>Cities</span></div>
 
-                <Row className="city-box" onClick={this.getRed}>
-                    <Col><img src={london} alt="london"
+                <Row className="city-box" id="london" onClick={this.getRed}>
+                    <Col><img src={london} alt="london" 
                         width='150px' height='90px'  /></Col>
                   <Col>London</Col>
                 </Row>
 
-                <Row className="city-box" onClick={this.getRed} checked>
+                <Row className="city-box" id="sydney" onClick={this.getRed} checked>
                     <Col ><img src={sydney} alt="sydney"
                         width='150px' height='90px' /></Col>
                   <Col>Sydney</Col>
                 </Row>
 
-                <Row className="city-box" onClick={this.getRed}>
+                <Row className="city-box" id="sf" onClick={this.getRed}>
                     <Col><img src={sf} alt="san francisco"
                         width='150px' height='90px' /></Col>
                   <Col>San Francisco</Col>
                 </Row>
 
-                <Row className="city-box" onClick={this.getRed}>
+                <Row className="city-box" id="seattle" onClick={this.getRed}>
                     <Col><img src={seattle} alt="seattle"
                         width='150px' height='90px' /></Col>
                   <Col>Seattle</Col>
@@ -58,5 +63,5 @@ class Sidebar extends Component {
     }
 
 
-    export default Sidebar;
+    export default withRouter(Sidebar);
     

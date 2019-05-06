@@ -4,6 +4,7 @@ import Profile from "./Profile";
 import PostProfile from "./PostProfile";
 import { Container, Row, Col, Cards } from 'react-bootstrap';
 import { Route, Link, Switch, withRouter } from 'react-router-dom';
+import CityProfile from "./CityProfile/CityProfile"
 
 
     class MainPage extends Component {
@@ -22,6 +23,7 @@ import { Route, Link, Switch, withRouter } from 'react-router-dom';
                         {/* <Profile userId={userId}/> */}
                         <Route path={this.props.match.url + '/profile/:userId'}  component = { Profile }/> 
                         <Route path={this.props.match.url + '/posts/:postId'}  component = { PostProfile }/> 
+                        <Route path={this.props.match.url + '/cities/:citiesId'}  component = { CityProfile }/> 
                       </Switch>
                     </div>
                   </Col>

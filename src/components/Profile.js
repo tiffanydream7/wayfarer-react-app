@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import PostContainer from './PostContainer';
 import { Container, Col, Row, Image, Modal } from 'react-bootstrap';
-import defaultImage from '../images/rorschach.jpg';
+import defaultImage from '../images/zack.jpeg';
 // const userId = '5ccbca39b2d97f4887531faa'
 import fakeUser from '../fakeUser';
 import Example from './Modals/Modal';
@@ -14,8 +14,6 @@ class Profile extends Component {
     state = {
         response: fakeUser
     }
-
-    
 
 
     getUser = () => {
