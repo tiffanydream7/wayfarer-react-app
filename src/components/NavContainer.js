@@ -33,33 +33,35 @@ class NavContainer extends Component {
       console.log(word)
     }
 
-    // moveAround = () => {
-    //   const userId = '5cce08dd06c00f000cf9b12d';
-    //   this.props.history.push(`/main/profile/${userId}`);
-    // }
+    resetState = () => {
+      this.state = {
+        loggedIn: false
+      }
+    }
 
     whosUsing = userman => {
       console.log('at nav:', userman.data)
       if (userman.data.session) {
+        console.log(userman.data.session)
+        const { currentUser, loggedIn} = userman.data.session;
         this.setState({
-          login: true
-        }) 
+          currentUser, loggedIn
+        })
       }
     }
 
 
   render() {
     let napkin;
-    console.log('navlog: ', this.state.loggedIn || this.state.login)
-    if (!this.state.loggedIn && !this.state.login) {
+    console.log('navlog: ', this.state.loggedIn)
+    if (!this.state.loggedIn) {
       napkin = (<Row className='signin-bar'>
-        <Col></Col> <Example logger={this.logToggler} signer={this.whosUsing} form='Login' />
+        <Col></Col> <Example signer={this.whosUsing} form='Login' />
         <Col></Col> <Example logger={this.logToggler} form='Sign up' />
         </Row>)
     } else {
       napkin = (<Row className='signin-bar'>            
-        <Col></Col><Example logger={this.logToggler} navRead={this.read} form='LogOut' />
-        <button onClick={this.getState}>stte</button>
+        <Col></Col><Example logout={this.resetState} navRead={this.read} form='LogOut' />
         </Row>)
     }
       console.log('napkin: ', napkin)
@@ -69,6 +71,9 @@ class NavContainer extends Component {
             
             <>
             {napkin}
+            <button onClick={this.getState}>stte</button>
+            <button onClick={this.resetState}>reset</button>
+            
             </>
             
             

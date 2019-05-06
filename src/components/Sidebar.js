@@ -17,8 +17,8 @@ class Sidebar extends Component {
         })
 
         let city = event.target.parentNode
-        // city.setAttribute('style', 'background: rgb(237, 82, 82)')
-        city.setAttribute('style', 'background: red')
+        city.setAttribute('style', 'background: rgb(237, 82, 82)')
+        // city.setAttribute('style', 'background: red')
     }
 
     render() {
@@ -30,7 +30,7 @@ class Sidebar extends Component {
 
                 <Row className="city-box" onClick={this.getRed}>
                     <Col><img src={london} alt="london"
-                        width='150px' height='90px' /></Col>
+                        width='150px' height='90px'  /></Col>
                   <Col>London</Col>
                 </Row>
 

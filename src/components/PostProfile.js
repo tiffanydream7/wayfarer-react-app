@@ -61,7 +61,7 @@ class PostProfile extends Component {
             profile = (
             <div className="intro">
                 <h1>{post ? post.title : 'no one yet'}</h1>
-                <h1>by {post ? post.user : 'anon'}</h1>
+                <h2>by {post ? post.user : 'anon'}</h2>
                 <h3>in {post ? post.city : 'world globe'}</h3>
                 {/* <h4>on {post ? post.joinDate : 'saturday i think ?'}</h4> */}
                 <h4> on {post ? post.joinDate.slice(0, 10) : 'saturday i think ?'}</h4>

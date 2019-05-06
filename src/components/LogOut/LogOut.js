@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import AuthModel from '../../models/AuthModel'
 
     class LogOut extends Component {
         componentDidMount(){
@@ -7,9 +7,10 @@ import React, { Component } from "react";
         }
 
         logoutHandler = () => {
-            // this.props.logger(false);
+            AuthModel.logout();
+            this.props.logout();
             this.props.onHide();
-            alert("this functionality is not yet complete")
+            // alert("this functionality is not yet complete")
         }
 
         addInfo = () => {
