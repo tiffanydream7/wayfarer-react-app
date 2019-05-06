@@ -38,7 +38,7 @@ conLog = () => {
 
     render() {
         console.log('form:', this.props.form)
-        let title;
+        // let title;
         let form;
         if(this.props.form === "Login"){
             form = <LogIn onHide={this.handleClose} getGuy={this.props.signer}/> 

@@ -9,7 +9,7 @@ import LogOut from "./LogOut/LogOut";
 
 class NavContainer extends Component {
   state = {
-    login: false
+    loggedIn: false
   };
 
 
@@ -50,24 +50,27 @@ class NavContainer extends Component {
 
   render() {
     let napkin;
-    if (this.state.login) {
-      napkin = (<div>
+    console.log('navlog: ', this.state.loggedIn || this.state.login)
+    if (!this.state.loggedIn && !this.state.login) {
+      napkin = (<Row className='signin-bar'>
         <Col></Col> <Example logger={this.logToggler} signer={this.whosUsing} form='Login' />
         <Col></Col> <Example logger={this.logToggler} form='Sign up' />
-        </div>)
+        </Row>)
     } else {
-      napkin = (<div>            <Col></Col><Example logger={this.logToggler} navRead={this.read} form='LogOut' />
-      <button onClick={this.getState}>stte</button></div>)
+      napkin = (<Row className='signin-bar'>            
+        <Col></Col><Example logger={this.logToggler} navRead={this.read} form='LogOut' />
+        <button onClick={this.getState}>stte</button>
+        </Row>)
     }
+      console.log('napkin: ', napkin)
 
           return (
             
-            <Row className='signin-bar'>
             
+            <>
             {napkin}
+            </>
             
-            <Col></Col><LogOut fun={this.logToggler} log="in" />}
-            </Row>
             
 
             );

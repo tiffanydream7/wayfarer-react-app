@@ -16,7 +16,7 @@ class PostProfile extends Component {
 
     getUser = () => {
         // axios.get(`${API_URL}/${this.props.userId}`)
-        PostModel.getPost('5ccf772399f22e000ca03192')
+        PostModel.getPost('5ccfbd1115734c000c585168')
         // PostModel.getPost(this.props.userPost)
         .then((res) => {
             console.log('post axios:',res.data)
@@ -63,8 +63,8 @@ class PostProfile extends Component {
                 <h1>{post ? post.title : 'no one yet'}</h1>
                 <h1>by {post ? post.user : 'anon'}</h1>
                 <h3>in {post ? post.city : 'world globe'}</h3>
-                <h4>on {post ? post.joinDate : 'saturday i think ?'}</h4>
-                {/* <h4>{user ? 'joined ' + user.joinDate.slice(0, 10) : 'nowhere at all'}</h4> */}
+                {/* <h4>on {post ? post.joinDate : 'saturday i think ?'}</h4> */}
+                <h4> on {user ? user.joinDate.slice(0, 10) : 'saturday i think ?'}</h4>
             </div>)
             
             content = post ? post.content : [{post: false}];
@@ -75,7 +75,7 @@ class PostProfile extends Component {
                 {/* <Container> */}
                     <Row>
                         <Col>{profile}</Col>
-                        <Col><Image src={defaultImage} onClick={this.sttata} roundedCircle/></Col>
+                        <Col><img src={defaultImage} onClick={this.sttata} className="profile-photo"/></Col>
                     </Row>
                     <Row>
                         <Col></Col>

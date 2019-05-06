@@ -24,8 +24,9 @@ class LogIn extends Component {
     }
 
     handleSuccess(response){
-        console.log('at login', response)
+        console.log('at login', response.data.session)
         this.props.getGuy(response)
+        this.props.onHide();
     }
 
     formChange = event => {
