@@ -7,7 +7,7 @@ const url = `https://teamblueapi.herokuapp.com/api/v1/users`
 class UserModel {
 
   static getProfile = (user) => {
-    let request = axios.post(`${url}/${user}`)
+    let request = axios.get(`${url}/${user}`)
     return request
   }
 

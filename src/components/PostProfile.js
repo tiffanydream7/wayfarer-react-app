@@ -2,25 +2,24 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import PostContainer from './PostContainer';
 import { Container, Col, Row, Image, Modal } from 'react-bootstrap';
-import defaultImage from '../images/rorschach.jpg';
+// import defaultImage from '../images/rorschach.jpg';
 // const userId = '5ccbca39b2d97f4887531faa'
-import fakeUser from '../fakeUser';
 import Example from './Modal/Modal';
-import UserModel from '../models/UserModel';
-const API_URL = 'https://teamblueapi.herokuapp.com/api/v1/users';
+import PostModel from '../models/PostModel';
 
 
-class Profile extends Component {
+class PostProfile extends Component {
     state = {
-        response: fakeUser
+        response: null
     }
 
 
     getUser = () => {
         // axios.get(`${API_URL}/${this.props.userId}`)
-        UserModel.getProfile(this.props.userId)
+        PostModel.getPost('5ccf772399f22e000ca03192')
+        // PostModel.getPost(this.props.userPost)
         .then((res) => {
-            console.log(res.data)
+            console.log('post axios:',res.data)
             this.setState({
                 response: res.data.data
             });
@@ -48,28 +47,31 @@ class Profile extends Component {
     }
 
     render(){
-        console.log(this.state.response)
+        if(this.state){console.log('in render:', this.state.response)}
         let profile = 'profile';
-        let posts = [];
-        let user;
+        let content = 'this story is blank';
+        let defaultImage;
+        // let user = 'anon';
+        let post;
         if(this.state.response){
             // console.log('get it')
-            user = this.state.response;
+            post = this.state.response;
             // console.log('user:', user)
             // console.log('name:', (user ? user.name : 'nothing'))
             profile = (
             <div className="intro">
-                <h1>{user ? user.username : 'no one yet'}</h1>
-                <h2>{user ? user.currentCity : 'nowhere at all'}</h2>
-                <h4>{user ? 'joined ' + user.joinDate : 'nowhere at all'}</h4>
+                <h1>{post ? post.title : 'no one yet'}</h1>
+                <h1>by {post ? post.user : 'anon'}</h1>
+                <h3>in {post ? post.city : 'world globe'}</h3>
+                <h4>on {post ? post.joinDate : 'saturday i think ?'}</h4>
                 {/* <h4>{user ? 'joined ' + user.joinDate.slice(0, 10) : 'nowhere at all'}</h4> */}
             </div>)
             
-            posts = user ? user.posts : [{user: false}];
-
-        }
+            content = post ? post.content : [{post: false}];
+            defaultImage = post.photo;
+             }
         return(
-            <div>
+            <div> 
                 {/* <Container> */}
                     <Row>
                         <Col>{profile}</Col>
@@ -83,6 +85,7 @@ class Profile extends Component {
                             <Example form="Create New Post" className="btn btn-warning" />
                         </Col>
                     </Row>
+                    <p>{content}</p>
                 
                 {/* <PostContainer info={posts} user={user ? user.name.split(' ')[0] : 'User'}/>
                 </Container> */}
@@ -93,6 +96,4 @@ class Profile extends Component {
 
 
 
-
-
-export default Profile
+export default PostProfile;

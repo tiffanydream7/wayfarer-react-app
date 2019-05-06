@@ -10,6 +10,7 @@ import LogIn from './components/LogIn/LogIn';
 import Landing from './components/Landing/Landing';
 import MainPage from './components/MainPage';
 import SearchBar from './components/SearchBar';
+import PostProfile from './components/PostProfile';
 // import Profile from './components/Profile';
  
 
@@ -35,6 +36,7 @@ class App extends Component {
             <Route exact path='/' component={ Landing }/>
             <Route path='/main/profile/:userId' component={ MainPage }/>
             <Route path='/search' component={ SearchBar }/>
+            <Route path='/tryposts' component={ PostProfile } />
           </Switch>
         </div>
       </div>
