@@ -37,9 +37,9 @@ class EditUserProfile extends Component {
             this.props.onHide();
         }
 
-        componentDidMount(){
+        // componentDidMount(){
 
-        }
+        // }
     
         render() {
             console.log('edit form?', this.state)

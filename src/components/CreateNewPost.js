@@ -17,13 +17,15 @@ class CreateNewPost extends Component {
     formSubmit = event => {
         event.preventDefault();
         console.log(this.state)
+        const newUser = this.state
+        console.log('newUser', newUser)
         PostModel.createPost(this.state)
         .then((response) => {
             this.handleSuccess(response);
-          })
-          .catch(error => {
-            console.log(error);
-          });
+        })
+        .catch(error => {
+            console.log('errors: ', error);
+        });
 
     }
 

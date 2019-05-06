@@ -17,6 +17,7 @@ class LogIn extends Component {
         console.log(this.state)
         AuthModel.login(this.state)
           .then((response) => {
+            console.log('in axios', response)
             this.handleSuccess(response);
           })
           .catch(error => {
