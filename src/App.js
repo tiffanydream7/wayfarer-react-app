@@ -3,10 +3,10 @@ import './App.css';
 import Header from './components/Header';
 import Profile from './components/Profile';
 import Blog from './components/Blog';
-import Example from './components/Modal/Modal';
+import Example from './components/Modals/Modal';
 import { Route, Link, Switch, withRouter } from 'react-router-dom'
-import SignUp from './components/SignUp/SignUp';
-import LogIn from './components/LogIn/LogIn';
+import SignUp from './components/Modals/SignUp';
+import LogIn from './components/Modals/LogIn';
 import Landing from './components/Landing/Landing';
 import MainPage from './components/MainPage';
 import SearchBar from './components/SearchBar';

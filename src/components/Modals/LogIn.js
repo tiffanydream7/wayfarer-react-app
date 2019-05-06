@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Route, Link, Switch, withRouter } from 'react-router-dom';
 import { Container, Row, Col, Button, Modal, Form } from 'react-bootstrap';
 // import axios from 'axios'
 import AuthModel from '../../models/AuthModel'
@@ -24,8 +25,11 @@ class LogIn extends Component {
     }
 
     handleSuccess(response){
-        console.log('at login', response.data.session)
+        console.log('at login', response.data.session.currentUser.id)
+        const respect = response.data.session.currentUser.id;
+        console.log('this part froro you', respect)
         this.props.getGuy(response)
+        this.props.history.push(`/main/profile/${respect}`)
         this.props.onHide();
     }
 
@@ -58,5 +62,5 @@ class LogIn extends Component {
     }
 
 
-    export default LogIn;
+    export default withRouter(LogIn);
     

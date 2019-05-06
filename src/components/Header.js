@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import Example from './Modal/Modal';
+import Example from './Modals/Modal';
 import logo from '../images/logo.png';
 import travel01 from '../images/travel01.jpeg';
 import NavContainer from './NavContainer';
@@ -9,6 +9,11 @@ import NavContainer from './NavContainer';
 
 class Header extends Component {
   
+
+  goHome = () => {
+    this.props.history.push('/')
+
+  }
   
     render() {
         return (
@@ -17,7 +22,7 @@ class Header extends Component {
             <nav>
                <Container className='header-box'>
             <Row className='logo'>
-                <Col><img src={logo} alt="Logo" width='100px' height='70px' /></Col>
+                <Col><img src={logo} onClick={this.goHome} alt="Logo" width='100px' height='70px' /></Col>
                 <Link to={'/'}></Link>
                 <Col>Wayfarer</Col><Link to={'/'}></Link>
             </Row>
@@ -31,5 +36,5 @@ class Header extends Component {
     }
 }
 
-export default Header
+export default withRouter(Header)
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import './Modal.css';
 import { Container, Row, Col, Button, Modal, Form } from 'react-bootstrap';
-import LogIn from '../LogIn/LogIn';
-import SignUp from '../SignUp/SignUp';
+import LogIn from './LogIn';
+import SignUp from './SignUp';
 import CreateNewPost from '../CreateNewPost';
-import LogOut from '../LogOut/LogOut';
-// import { exportDefaultSpecifier } from '@babel/types';
+import LogOut from './LogOut';
+import EditUserProfile from './EditUserProfile';
 
 class Example extends React.Component {
 constructor(props, context) {
@@ -46,8 +46,10 @@ conLog = () => {
             form = <SignUp onHide={this.handleClose} />
         }else if(this.props.form === "LogOut"){
             form = <LogOut logout={this.props.logout} onHide={this.handleClose} logger={this.conLog} yesm={this.modalRead}/>
+        }else if(this.props.form === "Edit Profile"){
+            form = <EditUserProfile onHide={this.handleClose} logger={this.conLog} yesm={this.modalRead}/>
         }else{
-            form = <CreateNewPost onHide={this.handleClose}/>
+            form = <CreateNewPost onHide={this.handleClose} user={this.props.user}/>
         }
         
 

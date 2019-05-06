@@ -4,7 +4,7 @@ import PostContainer from './PostContainer';
 import { Container, Col, Row, Image, Modal } from 'react-bootstrap';
 // import defaultImage from '../images/rorschach.jpg';
 // const userId = '5ccbca39b2d97f4887531faa'
-import Example from './Modal/Modal';
+import Example from './Modals/Modal';
 import PostModel from '../models/PostModel';
 
 

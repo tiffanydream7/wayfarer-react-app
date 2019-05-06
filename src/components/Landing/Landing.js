@@ -8,7 +8,7 @@ import Particles from "react-particles-js";
     class Landing extends Component {
     render() {
       return (
-        <div class="landing-page">
+        <div className="landing-page">
               <Row>
                 <Col><img src={travel01} alt="travel01" width="100%" height="50%"/></Col>
           </Row>

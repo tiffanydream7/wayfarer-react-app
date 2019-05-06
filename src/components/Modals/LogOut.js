@@ -3,7 +3,7 @@ import AuthModel from '../../models/AuthModel'
 
     class LogOut extends Component {
         componentDidMount(){
-            setTimeout(this.logoutHandler, 1000)
+            setTimeout(this.logoutHandler, 800)
         }
 
         logoutHandler = () => {

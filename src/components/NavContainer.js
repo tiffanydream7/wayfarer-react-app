@@ -3,8 +3,8 @@ import { Route, Link, Switch, withRouter } from 'react-router-dom';
 import Sidebar from "./Sidebar";
 import Profile from "./Profile";
 import { Container, Row, Col, Cards, Button } from 'react-bootstrap';
-import Example from './Modal/Modal';
-import LogOut from "./LogOut/LogOut";
+import Example from './Modals/Modal';
+import LogOut from "./Modals/LogOut";
 
 
 class NavContainer extends Component {
@@ -34,9 +34,11 @@ class NavContainer extends Component {
     }
 
     resetState = () => {
-      this.state = {
+      console.log('resetting')
+      this.props.history.push('/')
+      this.setState({
         loggedIn: false
-      }
+      })
     }
 
     whosUsing = userman => {
@@ -71,8 +73,8 @@ class NavContainer extends Component {
             
             <>
             {napkin}
-            <button onClick={this.getState}>stte</button>
-            <button onClick={this.resetState}>reset</button>
+            {/* <button onClick={this.getState}>stte</button>
+            <button onClick={this.resetState}>reset</button> */}
             
             </>
             
