@@ -10,13 +10,10 @@ import LogIn from './components/LogIn/LogIn';
 import Landing from './components/Landing/Landing';
 import MainPage from './components/MainPage';
 import SearchBar from './components/SearchBar';
-<<<<<<< HEAD
 import PostProfile from './components/PostProfile';
 // import Profile from './components/Profile';
  
-=======
 import Particles from 'react-particles-js';
->>>>>>> c1c16b30ed1a2b656820314515e5ff8a025e6aef
 
 
 const particlesOptions = {

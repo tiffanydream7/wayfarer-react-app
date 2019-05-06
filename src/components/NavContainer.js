@@ -33,36 +33,41 @@ class NavContainer extends Component {
       console.log(word)
     }
 
-    moveAround = () => {
-      const userId = '5cce08dd06c00f000cf9b12d';
-      this.props.history.push(`/main/profile/${userId}`);
-    }
+    // moveAround = () => {
+    //   const userId = '5cce08dd06c00f000cf9b12d';
+    //   this.props.history.push(`/main/profile/${userId}`);
+    // }
 
     whosUsing = userman => {
       console.log('at nav:', userman.data)
+      if (userman.data.session) {
+        this.setState({
+          login: true
+        }) 
+      }
     }
 
 
-      render() {
+  render() {
+    let napkin;
+    if (this.state.login) {
+      napkin = (<div>
+        <Col></Col> <Example logger={this.logToggler} signer={this.whosUsing} form='Login' />
+        <Col></Col> <Example logger={this.logToggler} form='Sign up' />
+        </div>)
+    } else {
+      napkin = (<div>            <Col></Col><Example logger={this.logToggler} navRead={this.read} form='LogOut' />
+      <button onClick={this.getState}>stte</button></div>)
+    }
 
           return (
             
             <Row className='signin-bar'>
-            <Col></Col><Example logger={this.logToggler} signer={this.whosUsing} form='Login' />
-            <Col></Col><Example logger={this.logToggler}  form='Sign up' />
             
-              {/* {login ? ( */}
-            {/* <li onClick={this.state.login_}></li> */}
-            <Col></Col><Example logger={this.logToggler} navRead={this.read} form='LogOut' />
-            <button onClick={this.moveAround}>Redirect</button>
-            <button onClick={this.getState}>stte</button>
+            {napkin}
             
-
-            {/* <Col></Col><LogOut fun={this.logToggler} log="out" />
-          
-            <Col></Col><LogOut fun={this.logToggler} log="in" /> */}
+            <Col></Col><LogOut fun={this.logToggler} log="in" />}
             </Row>
-
             
 
             );
