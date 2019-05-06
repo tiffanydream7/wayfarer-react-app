@@ -7,37 +7,26 @@ import logo from '../images/logo.png';
 class SearchBar extends Component {
     state = { term: '' };
 
-    onFormSubmit(event) {
+    onFormSubmit = (event) => {
         event.preventDefault();
-    }
+        console.log(this.state.term)
+
+        this.props.onSubmit(this.state.term);
+    };
 
     render() {
         return (
-          <header>
-            <title>Wayfarer</title>
-            <nav>
-               <Container className='header-box'>
-            <Row className='logo'>
-                <Col><img src={logo} alt="Logo" width='100px' height='70px' /></Col>
-                <Link to={'/'}></Link>
-                <Col>Wayfarer</Col><Link to={'/'}></Link>
-            </Row>
-            <div>
-                <form onSubmit={this.onFormSubmit}>
-                    <input type="text" placeholder="Search"
+            <form onSubmit={this.onFormSubmit} className="ui form">
+                <input
+                    type="text"
                     value={this.state.term}
-                    onChange={e => this.setState({ term: e.target.value})} />
+                    placeholder="Search"
+                    onChange={(e) => this.setState({ term: e.target.value })} />
                     
                 </form>
-            </div>
                         
 
-
-              </Container>
-            </nav>
-
          
-            </header>
         )
     }
 }
