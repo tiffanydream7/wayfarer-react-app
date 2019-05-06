@@ -7,8 +7,8 @@ import React, { Component } from "react";
         }
 
         logoutHandler = () => {
-            this.props.logger(false);
-            this.props.onHide();
+            // this.props.logger(false);
+            // this.props.onHide();
             alert("this functionality is not yet complete")
         }
 

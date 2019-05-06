@@ -25,7 +25,7 @@ class Blog extends Component {
                     <Card style={{ width: '18rem' }}>
                     <Card.Img variant="top" src={fish04} />
                     <Card.Body>
-                        <Card.Title>Explore The World</Card.Title>
+                        <Card.Title>Explore The Ocean</Card.Title>
                     <Card.Text>
                     Some quick example text to build on the card title and make up the bulk of
                     the card's content.
@@ -37,7 +37,7 @@ class Blog extends Component {
                         <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" src={fish02} />
                 <Card.Body>
-                        <Card.Title>Expand Horizon</Card.Title>
+                        <Card.Title>Expand Your Horizon</Card.Title>
                     <Card.Text>
                     Some quick example text to build on the card title and make up the bulk of
                     the card's content.

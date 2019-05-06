@@ -12,7 +12,7 @@ import MainPage from './components/MainPage';
 import SearchBar from './components/SearchBar';
 import PostProfile from './components/PostProfile';
 // import Profile from './components/Profile';
-
+ 
 import Particles from 'react-particles-js';
 
 
@@ -55,33 +55,20 @@ class App extends Component {
     }
 
     render() {
-        return ( <
-            div className = "App" >
-            <
-            Particles className = "particles"
-            params = { particlesOptions }
-            /> <
-            Header onClick = { this.addInfo }
-            /> <
-            div className = "cool-box" >
-            <
-            Switch >
-            <
-            Route exact path = '/'
-            component = { Landing }
-            /> <
-            Route path = '/main/profile/:userId'
-            component = { MainPage }
-            /> <
-            Route path = '/search'
-            component = { SearchBar }
-            /> <
-            Route path = '/tryposts'
-            component = { PostProfile }
-            /> <
-            /Switch> <
-            /div> <
-            /div>
+        return ( <div className="App">
+            <Particles className="particles"
+            params = { particlesOptions }/> 
+            <Header onClick = { this.addInfo }/> 
+            <div className = "cool-box" >
+            <Switch>
+            <Route exact path = '/'component = { Landing }/> 
+            <Route path = '/main/profile/:userId'
+            component = { MainPage }/> 
+            <Route path = '/search' component = { SearchBar }/> 
+            <Route path = '/tryposts' component = { PostProfile }/> 
+            </Switch> 
+            </div> 
+            </div>
 
         );
     }

@@ -16,7 +16,7 @@ import Blog from "../Blog";
               </Row>
           </div>
       );
-
+   
     }
     }
 
